@@ -1,0 +1,33 @@
+** INSTRUCTION ON HOW TO RUN THE PROGRAM AND TRY OUT THE FUNCTIONALITIES **
+
+Simply run the main method in phase2.
+You might have to do extra setting for maven, if not done previously.
+
+
+** List of features implemented in Phase2 **
+
+1. All mandatory extensions (5)
+  - * new user type: VIP extends from Attendee.
+  - other detailed specification can be found in demonstration video.
+
+2. Optional extensions (2)
+  - Users are able to view schedule in 3 different ways: 1) future enrolled events
+                                                         2) available events of a chosen day
+                                                         3) future events of a chosen speaker
+  - message feature extension: archive, delete, and "mark as read"
+
+3. Additional extensions (2)
+  - Users can add others as a friend, view friends' events, directly manage events from there.
+  - Users can download their event ticket as a well-designed pdf.
+
+
+** Design patterns Consideration **
+
+- Model View Presenter: We applied MVP design pattern to replace text UI with presenter classes.
+
+- Strategy: We have 3 different methods to display schedule, and we could apply strategy design pattern to
+            displaySchedule controllers by implementing an interface that contains "display" method.
+
+- Dependency Injection: most of our add & set methods are using dependency injection to create the instance
+                        somewhere else. Since our design only allows use case classes to instantiate a new entity,
+                        dependency injection is commonly applied in our program.
